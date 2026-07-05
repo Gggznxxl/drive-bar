@@ -189,8 +189,31 @@ function renderCompact(categories) {
   `;
 }
 
+// --- 欢迎弹窗（首次访问 + localStorage 记忆）---
+function initWelcome() {
+  const overlay = document.getElementById('welcomeOverlay');
+  const dismissBtn = document.getElementById('welcomeDismiss');
+  if (!overlay || !dismissBtn) return;
+
+  // 7天内不再弹出
+  const seen = localStorage.getItem('drivebar_welcome_seen');
+  if (seen) {
+    const seenTime = parseInt(seen, 10);
+    if (Date.now() - seenTime < 7 * 24 * 60 * 60 * 1000) {
+      overlay.classList.add('hidden');
+      return;
+    }
+  }
+
+  dismissBtn.addEventListener('click', () => {
+    overlay.classList.add('hidden');
+    localStorage.setItem('drivebar_welcome_seen', String(Date.now()));
+  });
+}
+
 // --- 启动 ---
 async function init() {
+  initWelcome();
   try {
     const response = await fetch('/data/videos.json');
     if (!response.ok) throw new Error('数据加载失败');

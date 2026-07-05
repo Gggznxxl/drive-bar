@@ -395,6 +395,87 @@ body {
 }
 
 /* ============================================
+   WELCOME NOTICE
+   ============================================ */
+
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0,0,0,0.50);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.welcome-overlay.hidden {
+  display: none;
+}
+
+.welcome-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 36px 32px 28px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+}
+
+.welcome-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.welcome-card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.welcome-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.welcome-card p strong {
+  color: var(--navy);
+}
+
+.welcome-muted {
+  font-size: 0.8rem !important;
+  color: var(--text-muted) !important;
+  margin-top: 4px !important;
+  margin-bottom: 20px !important;
+}
+
+.welcome-btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background: var(--mint);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.welcome-btn:hover {
+  background: var(--mint-dark);
+  transform: translateY(-1px);
+}
+
+/* ============================================
    VIDEO MODAL
    ============================================ */
 
