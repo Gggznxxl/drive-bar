@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>开车吧 — 新手上路实战指南</title>
+  <meta name="description" content="为刚拿驾照不敢上路的你准备的实战驾驶教学视频，市区防加塞、侧方停车、倒车入库，一查就会。" />
+
+  <!-- 安全策略 -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src https://player.bilibili.com; img-src 'self' data:; connect-src 'self';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="no-referrer" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- ===== Hero ===== -->
+  <header class="hero">
+    <div class="container">
+      <h1 class="hero-title">新手上路实战指南</h1>
+      <p class="hero-question">今天遇到了什么驾驶难题？</p>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="container" id="app">
+    <p class="loading-text">加载中…</p>
+  </main>
+
+  <!-- ===== Video Modal ===== -->
+  <div class="modal" id="videoModal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel">
+      <button class="modal-close" id="modalClose" aria-label="关闭">&times;</button>
+      <div class="video-wrapper">
+        <iframe
+          id="modalIframe"
+          src=""
+          allowfullscreen
+          allow="autoplay; encrypted-media"
+          sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
+          referrerpolicy="no-referrer"
+          loading="lazy"
+          title="视频播放器"
+        ></iframe>
+      </div>
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-brand">🚗 <strong>开车吧</strong> · 从驾校到马路</p>
+      <p class="footer-note">视频内容来自B站等平台，版权归原作者所有。本站仅做整理导航。</p>
+      <p class="footer-copy">© 2026 开车吧</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
